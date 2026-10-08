@@ -1,0 +1,40 @@
+expression Start_Date = #date(2020, 1, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 889420ab-6042-4196-b7f7-343809028783
+	queryGroup: 'Date Table'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression End_date = #date(2035, 12, 31) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
+	lineageTag: 7d0c5188-9ce7-4d4e-846b-55d632e2de13
+	queryGroup: 'Date Table'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Date
+
+expression DBX_Server = "adb-2214895868712355.15.azuredatabricks.net" meta [IsParameterQuery=true, List={"adb-2214895868712355.15.azuredatabricks.net", "adb-149190290744775.15.azuredatabricks.net", "adb-874753333903688.8.azuredatabricks.net"}, DefaultValue="adb-2214895868712355.15.azuredatabricks.net", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 253a1a69-3926-4a86-92a3-5ad418ace9c8
+	queryGroup: 'DBX Connections'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DBX_http = "/sql/1.0/warehouses/0f68f7d8154f2677" meta [IsParameterQuery=true, List={"/sql/1.0/warehouses/0f68f7d8154f2677", "/sql/1.0/warehouses/01d3bb4f664f84fb", "/sql/1.0/warehouses/c99f0cb1a2457338"}, DefaultValue="/sql/1.0/warehouses/0f68f7d8154f2677", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f6577fb9-c243-4480-9965-a9cd527949cb
+	queryGroup: 'DBX Connections'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DBX_Catalog = "gsc_devtest_unified_uc" meta [IsParameterQuery=true, List={"gsc_devtest_unified_uc", "gsc_uat_unified_uc", "gsc_prod_unified_uc"}, DefaultValue="gsc_devtest_unified_uc", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 25447d6b-4ead-4a19-9771-6e899a570324
+	queryGroup: 'DBX Connections'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

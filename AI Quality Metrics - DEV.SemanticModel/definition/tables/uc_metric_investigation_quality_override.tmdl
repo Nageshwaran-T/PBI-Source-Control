@@ -1,0 +1,194 @@
+table uc_metric_investigation_quality_override
+	lineageTag: 14900947-66a7-4915-a2e7-c29be8a4fc17
+
+	column record_id
+		dataType: string
+		lineageTag: 4b774bac-b9ae-4bd0-82b3-71b3230bfac7
+		summarizeBy: none
+		sourceColumn: record_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_type
+		dataType: string
+		lineageTag: b5425a62-4b42-4f2c-a21a-5e6b77ee5f2a
+		summarizeBy: none
+		sourceColumn: agent_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: cb1b38c9-e9e1-4cd7-a00b-cc31574d5d06
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Owning_Business_Unit
+		dataType: string
+		lineageTag: 9eaada7a-80d3-4e35-95a9-993d63f4b022
+		summarizeBy: none
+		sourceColumn: Owning_Business_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_Category
+		dataType: string
+		lineageTag: 948f65ec-0cce-4515-861a-21524bc1beca
+		summarizeBy: none
+		sourceColumn: KPI_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_Value
+		dataType: int64
+		formatString: 0
+		lineageTag: 68550134-adad-4827-85b6-37a1a85a374a
+		summarizeBy: sum
+		sourceColumn: KPI_Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column KPI_Name
+		dataType: string
+		lineageTag: 73ccd9b1-9d73-4c51-958d-a21384bd268e
+		summarizeBy: none
+		sourceColumn: KPI_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parent_KPI_Name
+		dataType: string
+		lineageTag: 1854300b-db82-434d-a03a-6ee7ba353545
+		summarizeBy: none
+		sourceColumn: Parent_KPI_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column measure_count_nr_override
+		dataType: int64
+		formatString: 0
+		lineageTag: 12c2d441-8e85-4078-8766-191de970bd06
+		summarizeBy: sum
+		sourceColumn: measure_count_nr_override
+
+		annotation SummarizationSetBy = Automatic
+
+	column measure_count_dr_override
+		dataType: int64
+		formatString: 0
+		lineageTag: ee1c46c7-5870-4956-8f9b-236b75eb6e16
+		summarizeBy: sum
+		sourceColumn: measure_count_dr_override
+
+		annotation SummarizationSetBy = Automatic
+
+	column investigation_quality_percentage_override
+		dataType: double
+		lineageTag: fbf4c69e-f3c5-427d-beab-5ef1af150321
+		summarizeBy: sum
+		sourceColumn: investigation_quality_percentage_override
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Local_Area
+		dataType: string
+		lineageTag: 89d1da48-66e4-4d43-ac92-4024f4e68f91
+		summarizeBy: none
+		sourceColumn: Local_Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 24c330f9-6689-4e1b-b755-548b51d2e901
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Similarity_Score
+		dataType: double
+		lineageTag: bd2531bb-2836-45f0-a657-ee911371fd47
+		summarizeBy: sum
+		sourceColumn: Similarity_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Owning_Organization_Entity
+		dataType: string
+		lineageTag: 04c1ab83-2486-4c70-a22a-ce425f3ff197
+		summarizeBy: none
+		sourceColumn: Owning_Organization_Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition uc_metric_investigation_quality_override = m
+		mode: import
+		queryGroup: Override
+		source =
+				let
+				    Source =
+				        Value.NativeQuery(
+				            Databricks.Catalogs(
+				                DBX_Server,
+				                DBX_http,
+				                [
+				                    Catalog = DBX_Catalog,
+				                    Database = null,
+				                    QueryTags = null,
+				                    EnableAutomaticProxyDiscovery = null,
+				                    Implementation = "2.0",
+				                    Protocol = null
+				                ]
+				            ){[Name = DBX_Catalog, Kind = "Database"]}[Data],
+				
+				            "
+				            SELECT
+				                `record_id`,
+				                `agent_type`,
+				                -- DATE(`EffectiveDate`),
+				                DATE(`ModifiedDate`),
+				                `Owning_Organization_Entity`,
+				                `Owning_Business_Unit`,
+				                `Local_Area`,
+				                `department`,
+				                `KPI_Category`,
+				                `KPI_Value`,
+				                `KPI_Name`,
+				                `Parent_KPI_Name`,
+				
+				                -- MEASURE(`measure_count_nr`) AS `measure_count_nr`,
+				                -- MEASURE(`measure_count_dr`) AS `measure_count_dr`,
+				
+				                MEASURE(`measure_count_nr_override`) AS `measure_count_nr_override`,
+				                MEASURE(`measure_count_dr_override`) AS `measure_count_dr_override`,
+				
+				                -- MEASURE(`investigation_quality_percentage_adoption`) AS `investigation_quality_percentage_adoption`
+				                MEASURE(`investigation_quality_percentage_override`) AS `investigation_quality_percentage_override`,
+				
+				                Similarity_Score
+				            FROM
+				            " & DBX_Catalog & ".u_conf_qlty_iro.metric_investigation_quality
+				            --gsc_devtest_unified_uc.u_conf_qlty_iro.metric_investigation_quality
+				            GROUP BY ALL
+				            ",
+				
+				            null,
+				            [EnableFolding = true]
+				        )
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

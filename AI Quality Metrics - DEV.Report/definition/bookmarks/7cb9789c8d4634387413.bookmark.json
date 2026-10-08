@@ -1,0 +1,1373 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Between date - Adoption",
+  "name": "7cb9789c8d4634387413",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "82fc81b560d18ddcc00d",
+      "404f86e6b0a9a8d0a430",
+      "1678a0ad044660015074",
+      "653f995c5e59db21b894",
+      "c2c4204e19112c01e965",
+      "21201e51108b767797a2",
+      "365c686b6b56894a2e64",
+      "2cf33bb6e55e230c9437"
+    ]
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "befb3a881dcbe5e018eb",
+    "sections": {
+      "befb3a881dcbe5e018eb": {
+        "visualContainers": {
+          "27a61f689a6059e3026a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "da1683db804950cb18bb": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "041783ad89d92011b35b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "023ef79e7301d405c99c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "63813450509900ddd552": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
+          "1b68ed10a9019780e298": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bbe2afb9cded93b323da",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e2d0413d90a736950b11": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5b66e0189994e205e44e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "14910d7f0594c37019d2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in IAI"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "406f0d4902d7b0ead702",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in VQMS"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7c2cb70b20275e5a7dc0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "IAI Coverage %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "01b539a02a430baab68b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "dfd6ba16ba0dc7c8c121",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "x-axis-parameter"
+                        }
+                      },
+                      "Property": "x-axis-parameter"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "x",
+                                "Entity": "x-axis-parameter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "x"
+                                            }
+                                          },
+                                          "Property": "x-axis-parameter Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Date''[Month Name]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "x-axis-parameter"
+                        }
+                      },
+                      "Property": "x-axis-parameter"
+                    }
+                  }
+                }
+              ],
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "x-axis-parameter"
+                              }
+                            },
+                            "Property": "x-axis-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Date''[Month Name]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Monthly"
+                }
+              ]
+            }
+          },
+          "72ee99f4d2c5c145403d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f83275fc3520a62e0037",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6986b3e9cc08b9704846",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Name"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Month Name"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "x-axis-parameter"
+                          }
+                        },
+                        "Property": "x-axis-parameter Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ],
+                "Y": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "adoption-y-secondary-axis"
+                          }
+                        },
+                        "Property": "adoption-y-secondary-axis Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "b3fcfea07c430b550a60": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c7dbe2df77de16b12906",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2a321c76c3330101231d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in IAI"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d509acbcb30e66160172",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in VQMS"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "feda1750da89840381b9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "IAI Coverage %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d33318095aa4acd64da3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5f482644e0303e7e0b43",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dce29fbf280234c506d5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ],
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in IAI"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in VQMS"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "IAI Coverage %"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Rows": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "adoption-rows-parameter"
+                          }
+                        },
+                        "Property": "adoption-rows-parameter Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 3
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_adoption.Owning_Organisation_Entity"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_adoption.Owning_Business_Unit"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_adoption.agent_type"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "794860973a0a317dc11c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "60ef7fb7c57eaa8e7cb9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "adoption-rows-parameter"
+                        }
+                      },
+                      "Property": "adoption-rows-parameter"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "a",
+                                "Entity": "adoption-rows-parameter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "a"
+                                            }
+                                          },
+                                          "Property": "adoption-rows-parameter Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality''[Owning_Organisation_Entity]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality''[Owning_Business_Unit]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality''[agent_type]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_adoption''[Owning_Organisation_Entity]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_adoption''[Owning_Business_Unit]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_adoption''[agent_type]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality''[Owning_Organisation_Entity]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Organisation Entity"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality''[Owning_Business_Unit]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Business Unit"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality''[agent_type]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Agent Type"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_adoption''[Owning_Organisation_Entity]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Organisation Entity"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_adoption''[Owning_Business_Unit]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Business Unit"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "adoption-rows-parameter"
+                              }
+                            },
+                            "Property": "adoption-rows-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_adoption''[agent_type]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Agent Type"
+                }
+              ]
+            }
+          },
+          "20bce0da597ed6cdfe86": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d4bba28b10e608e1a1a5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "record_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ea239842cd86aa0a5a29",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4b6b0cd84960d03b72ed",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "266e89d798a7ded6a0c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2f7422ec9a184c868b89",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "metric_investigation_quality"
+                        }
+                      },
+                      "Property": "EffectiveDate"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8584cad60098d5b10a48",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "call_status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "02d0ea5090b333b89b65",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "classification"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ccc7c10bdd1a0d0870da",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "deviation_creation_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b72c3b747bc3e00088b7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "deviation_description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2f0d28d805b652a6412a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "deviation_modification_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4960e97f5c2e8ed02e03",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "is_this_a_repeat"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aba51d7ec99b60701657",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "last_actioned_datetime"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a9f6642be1518286de20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "user_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ebefb84580e8e1acde9e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "vqms_deviation_modification_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4e153066779e4668c9ec",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "vqms_organisation_entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a10a782a42a95c3a57bd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "vqms_owning_business_unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3ea276852924190a0d8c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_deviation_quality_adoption"
+                        }
+                      },
+                      "Property": "vqms_user_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6148444e76d782948a16",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Total Adoption %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9d37bf2e39a431ad48b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "IAI Coverage %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fafee7d9801e9003369a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in IAI"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1198e235302b08b033c6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Deviations in VQMS"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "404f86e6b0a9a8d0a430": {
+            "isHidden": true
+          },
+          "82fc81b560d18ddcc00d": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Date Table'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'AI Performance'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Similarity Score'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup Adoption
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Override
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'DBX Connections'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Calculations","investigation_quality_agent_score","Start_Date","End_date","Date","metric_investigation_quality","vw_investigation_quality_adoption","uc_metric_investigation_quality_override","DBX_Server","DBX_http","DBX_Catalog"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table investigation_quality_agent_score
+ref table Calculations
+ref table Date
+ref table x-axis-parameter
+ref table y-axis-parameter
+ref table rows-parameter-agent
+ref table adoption-rows-parameter
+ref table metric_investigation_quality
+ref table uc_metric_investigation_quality_override
+ref table Parameter-rows-override
+ref table vw_investigation_quality_adoption
+
+ref cultureInfo en-US
+

@@ -1,0 +1,721 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "54ba9c5966b35eab6f87",
+  "position": {
+    "x": 16,
+    "y": 2528,
+    "z": 16000,
+    "height": 560,
+    "width": 1760,
+    "tabOrder": 19000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "deviation_id"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.deviation_id",
+              "nativeQueryRef": "deviation_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "investigation_id"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.investigation_id",
+              "nativeQueryRef": "investigation_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "owning_business_unit"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.owning_business_unit",
+              "nativeQueryRef": "owning_business_unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "owning_organisation_entity"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.owning_organisation_entity",
+              "nativeQueryRef": "owning_organisation_entity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "local_area"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.local_area",
+              "nativeQueryRef": "local_area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.department",
+              "nativeQueryRef": "department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "agent_type"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.agent_type",
+              "nativeQueryRef": "agent_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "last_actioned_date"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.last_actioned_date",
+              "nativeQueryRef": "last_actioned_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "source_system"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.source_system",
+              "nativeQueryRef": "source_system"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "Source System - Agent Type"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.Source System - Agent Type",
+              "nativeQueryRef": "Source System - Agent Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "scorer_llm_model"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.scorer_llm_model",
+              "nativeQueryRef": "scorer_llm_model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "agent_llm_model"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.agent_llm_model",
+              "nativeQueryRef": "agent_llm_model"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "Overall Scorer"
+                }
+              },
+              "queryRef": "Calculations.Overall Scorer",
+              "nativeQueryRef": "Overall Scorer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "Relevance Scorer"
+                }
+              },
+              "queryRef": "Calculations.Relevance Scorer",
+              "nativeQueryRef": "Relevance Scorer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "relevance_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.relevance_score_justification",
+              "nativeQueryRef": "relevance_score_justification"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "Completeness Scorer"
+                }
+              },
+              "queryRef": "Calculations.Completeness Scorer",
+              "nativeQueryRef": "Completeness Scorer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "completeness_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.completeness_score_justification",
+              "nativeQueryRef": "completeness_score_justification"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "Instruction-Following Scorer"
+                }
+              },
+              "queryRef": "Calculations.Instruction-Following Scorer",
+              "nativeQueryRef": "Instruction-Following Scorer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "instruction_following_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.instruction_following_score_justification",
+              "nativeQueryRef": "instruction_following_score_justification"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "Coherence / Fluency Scorer"
+                }
+              },
+              "queryRef": "Calculations.Coherence / Fluency Scorer",
+              "nativeQueryRef": "Coherence / Fluency Scorer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "coherence_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.coherence_score_justification",
+              "nativeQueryRef": "coherence_score_justification"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "groundedness-score"
+                }
+              },
+              "queryRef": "Calculations.groundedness-score",
+              "nativeQueryRef": "groundedness-score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "groundedness_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.groundedness_score_justification",
+              "nativeQueryRef": "groundedness_score_justification"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.7671895556384D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.owning_organisation_entity"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "141.78835245472015D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.owning_business_unit"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.89464550280285D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.agent_type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.71779762616865D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.last_actioned_date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.61590168854818D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.source_system"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "150.00447500357353D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.Source System - Agent Type"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "98.28956922040496D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.local_area"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.91584704211402D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.department"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.64478636389636D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.scorer_llm_model"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.36091131483076D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.agent_llm_model"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "846.5235799412733D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "investigation_quality_agent_score.groundedness_score_justification"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Record details'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {}
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceBelowTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "spaceBelowTitleArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

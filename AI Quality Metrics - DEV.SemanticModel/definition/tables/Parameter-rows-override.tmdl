@@ -1,0 +1,53 @@
+table Parameter-rows-override
+	isHidden
+	lineageTag: 4f4a9c8a-09c2-4d19-b9d3-088903efc9e0
+
+	column Parameter-rows-override
+		isHidden
+		lineageTag: 0ee851fa-7984-4fb6-9bba-c76c52eea24e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter-rows-override Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter-rows-override Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter-rows-override Fields'
+		isHidden
+		lineageTag: de3d6cc4-7a25-4610-96b7-a0ca0d5e18ad
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter-rows-override Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter-rows-override Order'
+		isHidden
+		formatString: 0
+		lineageTag: c00d23b3-f82a-46a5-94ea-fe0115ed2093
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter-rows-override = calculated
+		mode: import
+		source =
+				{
+				    ("Owning Business Unit", NAMEOF('uc_metric_investigation_quality_override'[Owning_Business_Unit]), 0),
+				    ("Owning Organization Entity", NAMEOF('uc_metric_investigation_quality_override'[Owning_Organization_Entity]), 1),
+				    ("Local Area", NAMEOF('uc_metric_investigation_quality_override'[Local_Area]), 2),
+				    ("Department", NAMEOF('uc_metric_investigation_quality_override'[department]), 3),
+				    ("Agent Type", NAMEOF('uc_metric_investigation_quality_override'[agent_type]), 4)
+				}
+
+	annotation PBI_Id = 604663b62bd846e7a97fd9c01bcb8ad6
+

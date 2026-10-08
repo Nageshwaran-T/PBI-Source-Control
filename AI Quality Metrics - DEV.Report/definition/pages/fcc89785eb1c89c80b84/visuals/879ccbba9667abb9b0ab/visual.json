@@ -1,0 +1,127 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "879ccbba9667abb9b0ab",
+  "position": {
+    "x": 32,
+    "y": 432,
+    "z": 2000,
+    "height": 384,
+    "width": 848
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Month Name"
+                }
+              },
+              "queryRef": "Date.Month Name",
+              "nativeQueryRef": "Month Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "IAI Used"
+                }
+              },
+              "queryRef": "Calculations.IAI Used",
+              "nativeQueryRef": "IAI Used"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "IAI Not Used Agent Type"
+                }
+              },
+              "queryRef": "Calculations.IAI Not Used Agent Type",
+              "nativeQueryRef": "IAI Not Used Agent Type"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "total_deviation_agent_type"
+                }
+              },
+              "queryRef": "Calculations.total_deviation_agent_type1",
+              "nativeQueryRef": "total_deviation_agent_type"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calculations"
+                    }
+                  },
+                  "Property": "% Adoption (any agent) - Agent Type"
+                }
+              },
+              "queryRef": "Calculations.total_deviation_agent_type",
+              "nativeQueryRef": "% Adoption (any agent) - Agent Type"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7084afc0b83ae6d45172",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "metric_investigation_quality"
+              }
+            },
+            "Property": "agent_type"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

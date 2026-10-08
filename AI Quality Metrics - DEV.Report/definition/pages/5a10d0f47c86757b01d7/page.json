@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "5a10d0f47c86757b01d7",
+  "displayName": "AI Performance",
+  "displayOption": "FitToWidth",
+  "height": 3100,
+  "width": 1800,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F2F3F4'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "8fed7f81a9d075d0a6b5",
+      "target": "7942eeca3945ed811863",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8fed7f81a9d075d0a6b5",
+      "target": "5f7f6bc91a1706cc8848",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8fed7f81a9d075d0a6b5",
+      "target": "bd554d58205d6b011a1d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8fed7f81a9d075d0a6b5",
+      "target": "a1231bf5478e029b5230",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8fed7f81a9d075d0a6b5",
+      "target": "1a1b195e1dd130c274ec",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7942eeca3945ed811863",
+      "target": "8fed7f81a9d075d0a6b5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7942eeca3945ed811863",
+      "target": "bfd6c02533a50080c1ea",
+      "type": "NoFilter"
+    }
+  ]
+}

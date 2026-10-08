@@ -1,0 +1,1123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "20bce0da597ed6cdfe86",
+  "position": {
+    "x": 16,
+    "y": 1648.0000000000002,
+    "z": 10000,
+    "height": 736,
+    "width": 1760.0000000000002,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "record_id"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.record_id",
+              "nativeQueryRef": "DEV-INV",
+              "displayName": "DEV-INV"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "owning_business_unit"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.owning_business_unit",
+              "nativeQueryRef": "Owning BU",
+              "displayName": "Owning BU"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "owning_organization_entity"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.owning_organization_entity",
+              "nativeQueryRef": "Owning Org Entity",
+              "displayName": "Owning Org Entity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "local_area"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.local_area",
+              "nativeQueryRef": "Local Area",
+              "displayName": "Local Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.department",
+              "nativeQueryRef": "Department",
+              "displayName": "Department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "deviation_owner"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.deviation_owner",
+              "nativeQueryRef": "Deviation Owner",
+              "displayName": "Deviation Owner"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "investigation_owner"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.investigation_owner",
+              "nativeQueryRef": "Investigation Owner",
+              "displayName": "Investigation Owner"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "deviation_creation_date"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.deviation_creation_date",
+              "nativeQueryRef": "Created Date",
+              "displayName": "Created Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "all_agents_used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_investigation_quality_adoption.all_agents_used)",
+              "nativeQueryRef": "All Agents Used",
+              "displayName": "All Agents Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "number_of_agents_used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_investigation_quality_adoption.number_of_agents_used)",
+              "nativeQueryRef": "Number of Agents Used",
+              "displayName": "Number of Agents Used"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_adoption"
+                        }
+                      },
+                      "Property": "any_iai_agent_used"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_investigation_quality_adoption.any_iai_agent_used)",
+              "nativeQueryRef": "Any IAI Agent Used",
+              "displayName": "Any IAI Agent Used"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "classification_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.classification_agent_eff_dt",
+              "nativeQueryRef": "classification_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "deviation_repeat_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.deviation_repeat_agent_eff_dt",
+              "nativeQueryRef": "deviation_repeat_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "direct_cause_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.direct_cause_agent_eff_dt",
+              "nativeQueryRef": "direct_cause_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "expected_standard_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.expected_standard_agent_eff_dt",
+              "nativeQueryRef": "expected_standard_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "gap_analysis_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.gap_analysis_agent_eff_dt",
+              "nativeQueryRef": "gap_analysis_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "gemba_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.gemba_agent_eff_dt",
+              "nativeQueryRef": "gemba_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "human_factor_analysis_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.human_factor_analysis_agent_eff_dt",
+              "nativeQueryRef": "human_factor_analysis_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "immediate_remedial_action_summary_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.immediate_remedial_action_summary_agent_eff_dt",
+              "nativeQueryRef": "immediate_remedial_action_summary_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "impact_and_risk_conversational_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.impact_and_risk_conversational_agent_eff_dt",
+              "nativeQueryRef": "impact_and_risk_conversational_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "investigate_data_variation_summary_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.investigate_data_variation_summary_agent_eff_dt",
+              "nativeQueryRef": "investigate_data_variation_summary_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "run_5why_analysis_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.run_5why_analysis_eff_dt",
+              "nativeQueryRef": "run_5why_analysis_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "summary_and_conclusion_conversational_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.summary_and_conclusion_conversational_agent_eff_dt",
+              "nativeQueryRef": "summary_and_conclusion_conversational_agent_eff_dt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_investigation_quality_adoption"
+                    }
+                  },
+                  "Property": "understand_the_issue_agent_eff_dt"
+                }
+              },
+              "queryRef": "vw_investigation_quality_adoption.understand_the_issue_agent_eff_dt",
+              "nativeQueryRef": "understand_the_issue_agent_eff_dt"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_investigation_quality_adoption"
+                  }
+                },
+                "Property": "deviation_creation_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Calculations.Total Adoption"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Calculations.Deviation in IAI"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Calculations.Deviation in VQMS"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Calculations.IAI Coverage"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.all_agents_used)"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.number_of_agents_used)"
+          }
+        },
+        {
+          "properties": {
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.any_iai_agent_used)"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "155.81170815106853D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.owning_organization_entity"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.67618127472716D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.local_area"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.51494907367433D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.department"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "107.7674799542367D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.deviation_owner"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.49642960815633D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.investigation_owner"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.5451610428413D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.all_agents_used)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.91580748765848D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.number_of_agents_used)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80.81880806536803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(vw_investigation_quality_adoption.any_iai_agent_used)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.22539688059675D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.owning_business_unit"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.8444926831094D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.classification_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "130.1411841195754D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.deviation_repeat_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.83675389908085D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.direct_cause_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.88302456390005D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.understand_the_issue_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "164.4832686061097D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.summary_and_conclusion_conversational_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.54959231213736D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.run_5why_analysis_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "154.23513465349427D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.investigate_data_variation_summary_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129.1456625165743D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.impact_and_risk_conversational_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.46245711505566D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.immediate_remedial_action_summary_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "136.2273289219772D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.human_factor_analysis_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.25177978126015D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.gemba_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.41227532012182D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.gap_analysis_agent_eff_dt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.06144519087955D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "vw_investigation_quality_adoption.expected_standard_agent_eff_dt"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Record details'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {}
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "ignorePadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceBelowTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "spaceBelowTitleArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,54 @@
+table y-axis-parameter
+	isHidden
+	lineageTag: c3d29b3b-e81f-464f-94c3-8f0cbfe00872
+
+	column y-axis-parameter
+		isHidden
+		lineageTag: 398e6279-795f-42fb-9e00-485250f61120
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'y-axis-parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'y-axis-parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'y-axis-parameter Fields'
+		isHidden
+		lineageTag: 8e7702b3-9c4e-4bb3-8e7f-9d2f2a8f76af
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'y-axis-parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'y-axis-parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: db1dda4f-947e-4f5c-aa32-e2bb31a4e784
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition y-axis-parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Overall", NAMEOF('Calculations'[Overall Scorer]), 0),
+				    ("Relevance", NAMEOF('Calculations'[Relevance Scorer]), 1),
+				    ("Completeness", NAMEOF('Calculations'[Completeness Scorer]), 2),
+				    ("Instruction-Following", NAMEOF('Calculations'[Instruction-Following Scorer]), 3),
+				    ("Coherence / Fluency", NAMEOF('Calculations'[Coherence / Fluency Scorer]), 4),
+				    ("Groundedness Score", NAMEOF('Calculations'[groundedness-score]), 5)
+				}
+
+	annotation PBI_Id = 715c636275cc49b4bb827493242feb05
+

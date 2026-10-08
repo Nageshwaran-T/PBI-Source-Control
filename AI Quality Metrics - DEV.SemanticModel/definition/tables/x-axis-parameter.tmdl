@@ -1,0 +1,52 @@
+table x-axis-parameter
+	isHidden
+	lineageTag: 89661385-330d-4f91-a556-47ece217923f
+
+	column x-axis-parameter
+		isHidden
+		lineageTag: f07edd62-590b-46c6-a6b1-ee48906e3017
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'x-axis-parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'x-axis-parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'x-axis-parameter Fields'
+		isHidden
+		lineageTag: 9a97d846-f582-4dd6-ae9a-a308ce1643b3
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'x-axis-parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'x-axis-parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7e2d5641-1356-4eba-9082-9225f3dfb162
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition x-axis-parameter = calculated
+		mode: import
+		source =
+				{
+				    --("Daily", NAMEOF('Date'[Date]), 0),
+				    ("Weekly", NAMEOF('Date'[Week_&_Year_ISO]), 1),
+				    ("Monthly", NAMEOF('Date'[Month Name]), 2),
+				    ("Yearly", NAMEOF('Date'[Year]), 3)
+				}
+
+	annotation PBI_Id = 31fdf50df9364f1098230c1e5f852158
+

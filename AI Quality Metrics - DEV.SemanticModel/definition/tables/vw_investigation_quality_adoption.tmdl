@@ -1,0 +1,301 @@
+table vw_investigation_quality_adoption
+	lineageTag: 360cbe58-00ea-43a1-b4c5-0f93bcc98265
+
+	column record_id
+		dataType: string
+		lineageTag: d54a1d13-a506-4289-8560-6cdc894f76e3
+		summarizeBy: none
+		sourceColumn: record_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column owning_business_unit
+		dataType: string
+		lineageTag: 4e6570bd-d4f9-49c9-82b1-87f6bb61aba4
+		summarizeBy: none
+		sourceColumn: owning_business_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owning_organization_entity
+		dataType: string
+		lineageTag: dfa4594a-14cd-4daa-a092-6ad7950abc2c
+		summarizeBy: none
+		sourceColumn: owning_organization_entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column local_area
+		dataType: string
+		lineageTag: e997a0dc-05be-442a-9fca-a2d697d36710
+		summarizeBy: none
+		sourceColumn: local_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: c55e5c3f-88fb-440f-8dd1-ab2e70c86081
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column deviation_owner
+		dataType: string
+		lineageTag: b3453650-e867-4eb2-ae5f-77b18b355c02
+		summarizeBy: none
+		sourceColumn: deviation_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column investigation_owner
+		dataType: string
+		lineageTag: 1a16c50c-a28a-4f70-805a-a3e0e2f2b0ea
+		summarizeBy: none
+		sourceColumn: investigation_owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column deviation_creation_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7ccaaecb-7409-4f64-983c-8d643beee7a1
+		summarizeBy: none
+		sourceColumn: deviation_creation_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column number_of_agents_used
+		dataType: int64
+		formatString: 0
+		lineageTag: dc55f1a8-fbff-424f-bf8c-5a237067e2a3
+		summarizeBy: sum
+		sourceColumn: number_of_agents_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column any_iai_agent_used
+		dataType: int64
+		formatString: 0
+		lineageTag: e678bf19-b259-4f77-9329-503d6abed98e
+		summarizeBy: sum
+		sourceColumn: any_iai_agent_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column all_agents_used
+		dataType: int64
+		formatString: 0
+		lineageTag: 07e89b31-f982-4a59-a890-33bd061cc2e2
+		summarizeBy: sum
+		sourceColumn: all_agents_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column understand_the_issue_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 9be03c2d-9b1a-47d8-85c1-f9b062b4cd97
+		summarizeBy: none
+		sourceColumn: understand_the_issue_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column classification_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 5d02a3bc-7f2c-458e-9e13-4a6baa37c767
+		summarizeBy: none
+		sourceColumn: classification_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column direct_cause_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: b04702a6-1e03-4bb5-8207-fb689571d2f5
+		summarizeBy: none
+		sourceColumn: direct_cause_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column expected_standard_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 0533d63a-c966-4306-bbf2-ff0c3e3132b4
+		summarizeBy: none
+		sourceColumn: expected_standard_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column gap_analysis_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 13ad0953-e15d-40db-b38b-067b33835c81
+		summarizeBy: none
+		sourceColumn: gap_analysis_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column gemba_agent_eff_dt
+		dataType: dateTime
+		formatString: mmmm d\, yyyy
+		lineageTag: f14111a4-be42-4e22-a09d-0870fbc5b09f
+		summarizeBy: none
+		sourceColumn: gemba_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column human_factor_analysis_agent_eff_dt
+		dataType: dateTime
+		formatString: mmmm d\, yyyy
+		lineageTag: 3bfdf8ab-f91a-429f-abf4-5ada368d70fb
+		summarizeBy: none
+		sourceColumn: human_factor_analysis_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column impact_and_risk_conversational_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: f8e3b6c1-7497-41d9-b5dc-572b1d59eba3
+		summarizeBy: none
+		sourceColumn: impact_and_risk_conversational_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column deviation_repeat_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 55259eb8-992e-4bd7-bf8c-bc4981ffe74d
+		summarizeBy: none
+		sourceColumn: deviation_repeat_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column investigate_data_variation_summary_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 739acbf9-7564-4909-b476-cfa9ed6fbe8f
+		summarizeBy: none
+		sourceColumn: investigate_data_variation_summary_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column immediate_remedial_action_summary_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 2d31a4c5-d26a-4aa8-b2bd-c2ba00552729
+		summarizeBy: none
+		sourceColumn: immediate_remedial_action_summary_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column summary_and_conclusion_conversational_agent_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 1e0c86fe-28af-4b4b-943a-46e091243e8d
+		summarizeBy: none
+		sourceColumn: summary_and_conclusion_conversational_agent_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column run_5why_analysis_eff_dt
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 6cc17229-c866-491c-b286-a58ce318a0e7
+		summarizeBy: none
+		sourceColumn: run_5why_analysis_eff_dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition vw_investigation_quality_adoption = m
+		mode: import
+		queryGroup: Adoption
+		source =
+				let
+				    Source =
+				        Value.NativeQuery(
+				            Databricks.Catalogs(
+				                DBX_Server,
+				                DBX_http,
+				                [
+				                    Catalog = DBX_Catalog,
+				                    Database = null,
+				                    QueryTags = null,
+				                    EnableAutomaticProxyDiscovery = null,
+				                    Implementation = "2.0",
+				                    Protocol = null
+				                ]
+				            ){[Name = DBX_Catalog, Kind = "Database"]}[Data],
+				
+				            "
+				                Select * from " & DBX_Catalog & ".u_conf_qlty_iro.vw_investigation_quality_adoption
+				            ",
+				
+				            null,
+				            [EnableFolding = true]
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"understand_the_issue_agent_eff_dt", type date}, {"classification_agent_eff_dt", type date}, {"direct_cause_agent_eff_dt", type date}, {"expected_standard_agent_eff_dt", type date}, {"gap_analysis_agent_eff_dt", type date}, {"gemba_agent_eff_dt", type date}, {"human_factor_analysis_agent_eff_dt", type date}, {"impact_and_risk_conversational_agent_eff_dt", type date}, {"deviation_repeat_agent_eff_dt", type date}, {"investigate_data_variation_summary_agent_eff_dt", type date}, {"immediate_remedial_action_summary_agent_eff_dt", type date}, {"summary_and_conclusion_conversational_agent_eff_dt", type date}, {"run_5why_analysis_eff_dt", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

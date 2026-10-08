@@ -1,0 +1,174 @@
+table metric_investigation_quality
+	lineageTag: cf1e650a-f4b7-4dd7-bbc6-57ad127ca809
+
+	column record_id
+		dataType: string
+		lineageTag: 4f175962-01a9-44ba-9fed-cade260614eb
+		summarizeBy: none
+		sourceColumn: record_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c4f78ebe-913e-4369-bd68-1abbecee500c
+		summarizeBy: none
+		sourceColumn: EffectiveDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Owning_Business_Unit
+		dataType: string
+		lineageTag: f1c71eb0-5d4d-4ee3-a9c6-3f72b858a148
+		summarizeBy: none
+		sourceColumn: Owning_Business_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Local_Area
+		dataType: string
+		lineageTag: c73de764-d6fa-4d4d-8e7e-e4a643068d04
+		summarizeBy: none
+		sourceColumn: Local_Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column Owning_Organization_Entity
+		dataType: string
+		lineageTag: 85528007-131a-46e6-9d67-6dd6580f9cb8
+		summarizeBy: none
+		sourceColumn: Owning_Organization_Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 8e04a962-2411-41c3-b8f8-1fa77f5611a3
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_used
+		dataType: int64
+		formatString: 0
+		lineageTag: 50580dde-fb37-461a-b34b-e247b43fb082
+		summarizeBy: sum
+		sourceColumn: agent_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_deviation
+		dataType: int64
+		formatString: 0
+		lineageTag: fed90458-91b8-41cf-be6f-cdddc64f686c
+		summarizeBy: sum
+		sourceColumn: total_deviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_not_used_overall
+		dataType: int64
+		formatString: 0
+		lineageTag: 49dfcd8a-585d-4359-8bb3-77b8dd622ec4
+		summarizeBy: sum
+		sourceColumn: agent_not_used_overall
+
+		annotation SummarizationSetBy = Automatic
+
+	column adoption_pct
+		dataType: double
+		lineageTag: 1abd1774-16be-4c99-a06d-8a663225a7b0
+		summarizeBy: sum
+		sourceColumn: adoption_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column agent_not_used
+		dataType: int64
+		formatString: 0
+		lineageTag: b0fdceaa-a8f6-4453-9bf2-436cd1c226e5
+		summarizeBy: sum
+		sourceColumn: agent_not_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_adoption_pct
+		dataType: double
+		lineageTag: fbf8d3f3-53e8-4bb3-8604-df25a772b69c
+		summarizeBy: sum
+		sourceColumn: agent_adoption_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column agent_type
+		dataType: string
+		lineageTag: a49a13f0-6879-4f46-8bbe-bdc41da14acd
+		summarizeBy: none
+		sourceColumn: agent_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition metric_investigation_quality = m
+		mode: import
+		queryGroup: Adoption
+		source =
+				let
+				    Source =
+				        Value.NativeQuery(
+				            Databricks.Catalogs(
+				                DBX_Server,
+				                DBX_http,
+				                [
+				                    Catalog = DBX_Catalog,
+				                    Database = null,
+				                    QueryTags = null,
+				                    EnableAutomaticProxyDiscovery = null,
+				                    Implementation = "2.0",
+				                    Protocol = null
+				                ]
+				            ){[Name = DBX_Catalog, Kind = "Database"]}[Data],
+				
+				            "
+				                    select
+				                    *
+				                    from
+				                    (
+				                        select
+				                        record_id,
+				                        agent_type,
+				                        DATE(EffectiveDate),
+				                        Owning_Business_Unit,
+				                        Owning_Organization_Entity,
+				                        Local_Area,
+				                        Department,
+				                        MEASURE(measure_count_nr) as agent_used,
+				                        MEASURE(measure_count_dr) as total_deviation,
+				                        MEASURE(measure_count_agent_not_used_overallall) as agent_not_used_overall,
+				                        round(measure(investigation_quality_percentage_adoption), 2) as adoption_pct,
+				                        measure(measure_count_agent_not_used_nr) as agent_not_used,
+				                        measure(investigation_quality_percentage_agent_adoption) as agent_adoption_pct
+				                        from
+				                        gsc_devtest_unified_uc.u_conf_qlty_iro.metric_investigation_quality
+				                        group by
+				                        all
+				                    )
+				            ",
+				
+				            null,
+				            [EnableFolding = true]
+				        )
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,446 @@
+table Calculations
+	lineageTag: d00c6703-acaf-4ad9-8a78-d43f5b1d4810
+
+	measure 'Relevance Scorer' =
+			
+			VAR AvgScore =
+			    CALCULATE(
+			        AVERAGE(investigation_quality_agent_score[relevance_score]),
+			        investigation_quality_agent_score[is_current] = 1
+			    )
+			RETURN
+			DIVIDE(AvgScore, 5)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: 017828ee-2796-49f8-be63-cbf4d9fdd95a
+
+	measure 'Completeness Scorer' =
+			
+			VAR AvgScore =
+			    CALCULATE(
+			        AVERAGE(investigation_quality_agent_score[completeness_score]),
+			        investigation_quality_agent_score[is_current] = 1
+			    )
+			RETURN
+			DIVIDE(AvgScore, 5)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: fcf01524-4021-4a47-8efe-f808252ea4d6
+
+	measure 'Instruction-Following Scorer' =
+			
+			VAR AvgScore =
+			    CALCULATE(
+			        AVERAGE(investigation_quality_agent_score[instruction_following_score]),
+			        investigation_quality_agent_score[is_current] = 1
+			    )
+			RETURN
+			DIVIDE(AvgScore, 5)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: b5fa1b4a-170c-4645-bcab-f5037f9a7be8
+
+	measure 'Coherence / Fluency Scorer' =
+			
+			VAR AvgScore =
+			    CALCULATE(
+			        AVERAGE(investigation_quality_agent_score[coherence_score]),
+			        investigation_quality_agent_score[is_current] = 1
+			    )
+			RETURN
+			DIVIDE(AvgScore, 5)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: 38ea224b-9081-4227-9101-f6d4850c981e
+
+	measure 'Date In Fact Range' = ```
+			
+			
+			VAR MinDate = 
+			CALCULATE (
+			    MIN ( investigation_quality_agent_score[last_actioned_date] ),
+			    ALL ( 'Date' )
+			)
+			
+			VAR MaxDate = 
+			CALCULATE (
+			    MAX ( investigation_quality_agent_score[last_actioned_date] ),
+			    ALL ( 'Date' )
+			)
+			
+			RETURN
+			IF (
+			    MAX ( 'Date'[Date] ) >= MinDate &&
+			    MAX ( 'Date'[Date] ) <= MaxDate,
+			    1,
+			    0
+			)
+			```
+		formatString: 0
+		displayFolder: agent score\score
+		lineageTag: 48763daf-ea0c-4df8-856b-9a6c5b8e99c2
+
+	measure 'Date In Adoption Range' = ```
+			
+			
+			VAR MinDate = 
+			CALCULATE (
+			    MIN ( metric_investigation_quality[EffectiveDate] ),
+			    ALL ( 'Date' )
+			)
+			
+			VAR MaxDate = 
+			CALCULATE (
+			    MAX (metric_investigation_quality[EffectiveDate] ),
+			    ALL ( 'Date' )
+			)
+			
+			RETURN
+			IF (
+			    MAX ( 'Date'[Date] ) >= MinDate &&
+			    MAX ( 'Date'[Date] ) <= MaxDate,
+			    1,
+			    0
+			)
+			```
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: 50acfc69-116b-4419-ae55-4978ee3a71df
+
+	measure 'Date In Override Range' = ```
+			
+			
+			VAR MinDate = 
+			CALCULATE (
+			    MIN ( uc_metric_investigation_quality_override[ModifiedDate] ),
+			    ALL ( 'Date' )
+			)
+			
+			VAR MaxDate = 
+			CALCULATE (
+			    MAX (uc_metric_investigation_quality_override[ModifiedDate] ),
+			    ALL ( 'Date' )
+			)
+			
+			RETURN
+			IF (
+			    MAX ( 'Date'[Date] ) >= MinDate &&
+			    MAX ( 'Date'[Date] ) <= MaxDate,
+			    1,
+			    0
+			)
+			```
+		formatString: 0
+		displayFolder: Override
+		lineageTag: c994a214-83f1-4763-9a35-ea2eb9e85340
+
+	measure 'Total Agent Evaluations' =
+			
+			COUNTROWS(investigation_quality_agent_score)
+		formatString: 0
+		displayFolder: agent score\score
+		lineageTag: 45244429-42cd-4479-b02d-4ddc0e6cab2b
+
+	measure 'Total Agents' =
+			
+			DISTINCTCOUNT(investigation_quality_agent_score[agent_type])
+		formatString: 0
+		displayFolder: agent score\score
+		lineageTag: 9430c83b-28d5-4fb8-95ce-74ef557b12c0
+
+	measure 'Relevance Scorer (Text)' =
+			
+			FORMAT (
+			    AVERAGE ( investigation_quality_agent_score[relevance_score] ),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: eaaf0cff-e153-4cd8-a40f-c9f8144bc91d
+
+	measure 'Completeness Scorer (Text)' =
+			
+			FORMAT (
+			    AVERAGE ( investigation_quality_agent_score[Completeness_score] ),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: eac68045-3d62-4423-9dc1-4c8689c1e1e0
+
+	measure 'Instruction-Following Scorer (Text)' =
+			
+			FORMAT (
+			    AVERAGE ( investigation_quality_agent_score[instruction_following_score] ),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: ec4a9826-cd89-4984-9219-1bf495674505
+
+	measure 'Coherence / Fluency Scorer (Text)' =
+			
+			FORMAT (
+			    AVERAGE ( investigation_quality_agent_score[coherence_score] ),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: bfe3b11c-4c91-4dfa-9297-8fd34f1c30ad
+
+	measure 'Overall Scorer' =
+			
+			DIVIDE([Relevance Scorer] + [Completeness Scorer] + [Instruction-Following Scorer] + [Coherence / Fluency Scorer], 4)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: 6ad3b586-93f5-4036-8a29-d2d13adf504c
+
+	measure 'Overall Scorer (Text)' =
+			
+			FORMAT (
+			    DIVIDE(AVERAGE ( investigation_quality_agent_score[relevance_score] ) + AVERAGE ( investigation_quality_agent_score[Completeness_score] ) +  AVERAGE ( investigation_quality_agent_score[instruction_following_score] ) + AVERAGE ( investigation_quality_agent_score[coherence_score] ), 4),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: 3c5feaa2-5209-4340-976c-8a476584930d
+
+	measure 'Total Agent Evaluations distinct' =
+			
+			DISTINCTCOUNT(investigation_quality_agent_score[deviation_id])
+		formatString: 0
+		displayFolder: agent score\score
+		lineageTag: b0da4114-dfef-46a9-9e99-1dfc4474da37
+
+	measure 'Latest Actioned' =
+			
+			LASTDATE(investigation_quality_agent_score[last_actioned_date])
+		formatString: Short Date
+		displayFolder: agent score\score
+		lineageTag: fab96ffb-1809-446d-9b2d-6a50758e81d0
+
+	measure 'Count of Agent Type' = ```
+			
+			 COUNT(investigation_quality_agent_score[agent_type])
+			```
+		formatString: 0
+		displayFolder: agent score\score
+		lineageTag: 66d89b19-6aa5-42a5-bfe1-0705f75c1ff7
+
+	measure 'Override %' =
+			
+			AVERAGEA(uc_metric_investigation_quality_override[investigation_quality_percentage_override]) / 100
+			
+			-- 📌 below is old % logic
+			/*
+			VAR _count_nr = [Override Numerator Count]
+			VAR _count_dr = [Override Denominator Count]
+			RETURN
+			SWITCH(
+			        TRUE(),
+			        _count_nr = 0 && _count_dr = 0, BLANK(),        -- both 0 → blank
+			        _count_nr = 0 && _count_dr > 0, 0,              -- nr = 0, dr > 0 → 0%
+			        _count_nr > 0 && _count_dr = 0, BLANK(),        -- nr > 0, dr = 0 → #N/A alternative
+			        DIVIDE(_count_nr, _count_dr, 0)                 -- normal case
+			    )
+			    */
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: Override
+		lineageTag: 15e9fe26-aa56-4400-a13d-3a1e7f4f4da2
+
+	measure 'Similarity Score %' =
+			
+			AVERAGE(uc_metric_investigation_quality_override[Similarity_Score]) / 5
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Override
+		lineageTag: 812adb25-9fbc-4dcb-8669-46bcd5fc1178
+
+	measure Lower = 0
+		formatString: 0
+		displayFolder: Override
+		lineageTag: f50f5bc0-977b-44f4-bb47-bf7277a4c65e
+
+	measure 'Override Numerator Count' =
+			
+			SUMX(
+			    VALUES(uc_metric_investigation_quality_override[agent_type]),
+			    CALCULATE(
+			        DISTINCTCOUNT(uc_metric_investigation_quality_override[record_id]),
+			        uc_metric_investigation_quality_override[measure_count_nr_override] = 1
+			    )
+			)
+			
+			/* -----------Old logic
+			VAR _count_nr =
+			    COUNTROWS(
+			        FILTER(
+			            uc_metric_investigation_quality_override,
+			            uc_metric_investigation_quality_override[measure_count_nr_override] = 1 &&
+			            uc_metric_investigation_quality_override[Parent_KPI_Name] = "%Override"
+			        )
+			    )
+			VAR _count_dr =
+			    COUNTROWS(
+			        FILTER(
+			            uc_metric_investigation_quality_override,
+			            uc_metric_investigation_quality_override[measure_count_dr_override] = 1 &&
+			            uc_metric_investigation_quality_override[Parent_KPI_Name] = "%Override"
+			        )
+			    )
+			RETURN
+			_count_nr */
+		formatString: 0
+		displayFolder: Override
+		lineageTag: 5ddbe18d-1c9f-4437-8d13-3b91557845b4
+
+	measure 'Override Denominator Count' =
+			
+			SUMX(
+			    VALUES(uc_metric_investigation_quality_override[agent_type]),
+			    CALCULATE(
+			        DISTINCTCOUNT(uc_metric_investigation_quality_override[record_id]),
+			        uc_metric_investigation_quality_override[measure_count_dr_override] = 1
+			    )
+			)
+		formatString: 0
+		displayFolder: Override
+		lineageTag: 1fe345d8-146c-49b6-8cce-fe4b41730cc1
+
+	measure 'Count of record id' = ```
+			
+			    CALCULATE(
+			        DISTINCTCOUNT(vw_investigation_quality_adoption[record_id])
+			    )
+			```
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: 90d7b80d-412b-4d89-8cd1-33ca368f7b1c
+
+	measure 'IAI Used' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT( metric_investigation_quality[record_id]),
+			    metric_investigation_quality[agent_used] = 1
+			)
+		formatString: #,0
+		displayFolder: Adoption
+		lineageTag: cb1e2ac3-4cbc-4837-869d-6fd370222d72
+
+	measure 'IAI Not Used' =
+			
+			[total_deviation] - [IAI Used]
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: 201df09a-d3b6-4c67-9b21-afb45cd1360e
+
+	measure '% Adoption (any agent)' = [IAI Used] / [total_deviation]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Adoption
+		lineageTag: 1dfb89f4-bb0c-4926-bcf5-d83b9b3c75a8
+
+	measure total_deviation =
+			
+			CALCULATE(
+			    DISTINCTCOUNT( metric_investigation_quality[record_id]),
+			    metric_investigation_quality[total_deviation] = 1
+			)
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: 27d28d2e-9db4-4dbe-a533-08a27a018d43
+
+	measure 'IAI Not Used Agent Type' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT( metric_investigation_quality[record_id]),
+			    metric_investigation_quality[agent_not_used] = 1
+			)
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: b4fc8c7e-c3c4-442f-9cf1-c02264c6d548
+
+	measure '% Adoption (any agent) - Agent Type' = [IAI Used] / [total_deviation_agent_type]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Adoption
+		lineageTag: 7dc15e48-1398-41e7-a1b3-89a291adca85
+
+	measure total_deviation_agent_type = [IAI Used] + [IAI Not Used Agent Type]
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: db5ad5ba-217f-4abe-9f17-19d118afc587
+
+	measure 'IAI Not Used Dynamic' = ```
+			
+			VAR _agentselected = ISFILTERED(metric_investigation_quality[agent_type])
+			RETURN 
+			IF(
+			    _agentselected,
+			    [IAI Not Used Agent Type],
+			    [IAI Not Used]
+			)
+			
+			
+			```
+		formatString: #,0
+		displayFolder: Adoption
+		lineageTag: fbfc0df3-0f61-4674-89b4-20a1c8a647d7
+
+	measure total_deviation_dynamic = ```
+			
+			VAR _agentselected = ISFILTERED(metric_investigation_quality[agent_type])
+			RETURN 
+			IF(
+			    _agentselected,
+			    [total_deviation_agent_type],
+			    [total_deviation]
+			)
+			```
+		formatString: 0
+		displayFolder: Adoption
+		lineageTag: a49a5cc7-e683-40e2-8594-1f8535ade33f
+
+	measure '% Adoption (any agent) Dynamic' = ```
+			
+			VAR _agentselected = ISFILTERED(metric_investigation_quality[agent_type])
+			RETURN 
+			IF(
+			    _agentselected,
+			    [% Adoption (any agent) - Agent Type],
+			    [% Adoption (any agent)]
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Adoption
+		lineageTag: 7b239055-3051-4e25-bdb3-1b89711909fd
+
+	measure groundedness-score =
+			
+			VAR AvgScore =
+			    CALCULATE(
+			        AVERAGE(investigation_quality_agent_score[groundedness_score]),
+			        investigation_quality_agent_score[is_current] = 1
+			    )
+			RETURN
+			DIVIDE(AvgScore, 5)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: agent score\score
+		lineageTag: 619628c2-49b4-47b5-971c-8cb6830d80b7
+
+	measure groundedness-score-text =
+			
+			FORMAT (
+			    AVERAGE ( investigation_quality_agent_score[groundedness_score] ),
+			    "#,##0.0"
+			) & " / 5"
+		displayFolder: agent score\score text
+		lineageTag: 3e5ca691-2d2d-4894-a90f-702fea38e4eb
+
+	partition Calculations = m
+		mode: import
+		queryGroup: 'AI Performance'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,1417 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Between date - Override",
+  "name": "c93bfad9b31d3f2fc64b",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "be915bc8df1b3ca4040b",
+      "beaf812499c9ac1def87",
+      "98faaecd90be17d3181b",
+      "4c0d7604d518f5cfdca3",
+      "56fb4f4071520ab631d3",
+      "ab4a86062f8c6effa463",
+      "62d25315a03f77d4e36e",
+      "baa96cd1db4b4b13dfe2"
+    ]
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "d31c062adbf8e894e490",
+    "sections": {
+      "d31c062adbf8e894e490": {
+        "visualContainers": {
+          "608c64792dbf8bcc6bc3": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "89f84ee5c124769f2fe6": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "6c0c6682b795f6d33f68": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a2d5c04c544ce909bea2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "bd503b1b2bf2e35a0121": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
+          "2c0144649b9400632c43": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b35c6eba7a3492c62075",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b000c0ca90f5c56686a2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d0fef1f983e7aab39d95",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b385642f6d7e04d95725",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "43f6ec0d7b4ed9145885": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b330888baab190418596",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "x-axis-parameter"
+                        }
+                      },
+                      "Property": "x-axis-parameter"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "x",
+                                "Entity": "x-axis-parameter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "x"
+                                            }
+                                          },
+                                          "Property": "x-axis-parameter Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Date''[Date]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "x-axis-parameter"
+                        }
+                      },
+                      "Property": "x-axis-parameter"
+                    }
+                  }
+                }
+              ],
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "x-axis-parameter"
+                              }
+                            },
+                            "Property": "x-axis-parameter Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Date''[Date]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Daily"
+                }
+              ]
+            }
+          },
+          "1bdea463a4abc5eadd18": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b41524528a3712bc1700",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "26964fabe9370c497474",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Avg Override %"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "x-axis-parameter"
+                          }
+                        },
+                        "Property": "x-axis-parameter Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "621f34ffcc377e94a749": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "613572c809a25d73d48a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "708bbe10ceeea1ae6044",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "15d91febaeee49eb57c1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ea587aca0b8c0606030a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d88992f228c204ae0862",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  }
+                ],
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Avg Override %"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Avg Similarity Score %"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Rows": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Parameter-rows-override"
+                          }
+                        },
+                        "Property": "Parameter-rows-override Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 3
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_override.Owning_Business_Unit"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_override.Owning_Organisation_Entity"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "uc_metric_investigation_quality_override.agent_type"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "fd9728828e1971870676": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "06ca0861bcaa92710c0e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Parameter-rows-override"
+                        }
+                      },
+                      "Property": "Parameter-rows-override"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "p",
+                                "Entity": "Parameter-rows-override",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "p"
+                                            }
+                                          },
+                                          "Property": "Parameter-rows-override Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_override''[Owning_Business_Unit]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_override''[Owning_Organisation_Entity]'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''uc_metric_investigation_quality_override''[agent_type]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Parameter-rows-override"
+                              }
+                            },
+                            "Property": "Parameter-rows-override Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_override''[Owning_Business_Unit]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Business Unit"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Parameter-rows-override"
+                              }
+                            },
+                            "Property": "Parameter-rows-override Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_override''[Owning_Organisation_Entity]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Owning Organisation Entity"
+                },
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Parameter-rows-override"
+                              }
+                            },
+                            "Property": "Parameter-rows-override Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''uc_metric_investigation_quality_override''[agent_type]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Agent Type"
+                }
+              ]
+            }
+          },
+          "3c2545e7d6b2cc3fca5f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "18dfec1b060901187d5c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be4233aa1caa16182e90",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Avg Similarity Score %"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "x-axis-parameter"
+                          }
+                        },
+                        "Property": "x-axis-parameter Fields"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "21884971139fdd70039a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4fb4eba90278b0959b27",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "692d402a484625ce48db",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9cf84e8be149cb5c3a09": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "194c23f8ebb342104285",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a46ab9740356e2b70901",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "63cfa0e8c90faeec3132": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "75d5c52b11a18dc95d0b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "record_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "796c9a7c4227bccda0cb",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Organisation_Entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2804a4fe990bbaa20d26",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "Owning_Business_Unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0133a7409d02bb6b870b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "agent_type"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "948a290b53200b35b0c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "uc_metric_investigation_quality_override"
+                        }
+                      },
+                      "Property": "ModifiedDate"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "808cb206d3d63d19bc16",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "classification"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9aaaf0fadc96a16a8b90",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "call_status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "25c90eb7cb83c74b288e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "deviation_creation_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a66492d00c4a539330d2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "deviation_description"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "620af325cb04244b0ca6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "deviation_modification_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1293e42027502ce5e8a1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "is_this_a_repeat"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ff0f6f5473263b800e77",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "user_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0558ede0e45a1a7bce03",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "vqms_classification"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6410f42378c10ad6a445",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "vqms_deviation_modification_date"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2ad26465d04ed415790c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "vqms_organisation_entity"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "33951813b37075b7a64a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "vqms_owning_business_unit"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "47f2c5206cbd04298e9b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_investigation_quality_similarity"
+                        }
+                      },
+                      "Property": "vqms_user_id"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "644e760442ac47c32477",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Override %"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2612e6bf8e34c1ebb295",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calculations"
+                        }
+                      },
+                      "Property": "Similarity Score %"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "beaf812499c9ac1def87": {
+            "isHidden": true
+          },
+          "be915bc8df1b3ca4040b": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

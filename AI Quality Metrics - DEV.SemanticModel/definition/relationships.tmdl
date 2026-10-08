@@ -1,0 +1,22 @@
+relationship 9e7d13ab-a867-6d3d-3314-f43f4fbc68c7
+	fromColumn: investigation_quality_agent_score.last_actioned_date
+	toColumn: Date.Date
+
+relationship fd76f5a0-58d1-aed9-4284-b5e377a5c5fc
+	fromColumn: metric_investigation_quality.EffectiveDate
+	toColumn: Date.Date
+
+relationship 810cae3f-d581-54b8-7bd7-deb18e677e5e
+	fromColumn: uc_metric_investigation_quality_override.ModifiedDate
+	toColumn: Date.Date
+
+relationship 8fe79689-1171-9e14-14e7-b2df387bbe77
+	fromColumn: vw_investigation_quality_adoption.deviation_creation_date
+	toColumn: Date.Date
+
+relationship e24a6b7c-de29-1bb9-c21f-1c9a2c758fb4
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: metric_investigation_quality.record_id
+	toColumn: vw_investigation_quality_adoption.record_id
+

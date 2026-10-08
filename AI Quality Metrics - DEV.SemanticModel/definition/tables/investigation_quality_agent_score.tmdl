@@ -1,0 +1,312 @@
+table investigation_quality_agent_score
+	lineageTag: 921c1836-43e7-41c9-877a-9df130597b26
+
+	column investigation_quality_agent_score_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b1716d2-7fb7-4507-8544-21509d82044d
+		summarizeBy: sum
+		sourceColumn: investigation_quality_agent_score_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_type
+		dataType: string
+		lineageTag: ccc321f0-407c-4a7d-aca1-4b5f2f58fc7b
+		summarizeBy: none
+		sourceColumn: agent_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column deviation_id
+		dataType: string
+		lineageTag: 98778bfa-df10-4c7e-ac5a-3fe8b061c335
+		summarizeBy: none
+		sourceColumn: deviation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column investigation_id
+		dataType: string
+		lineageTag: 70a81f99-5e16-4f60-99d2-d048be7c10fa
+		summarizeBy: none
+		sourceColumn: investigation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column coherence_score
+		dataType: double
+		lineageTag: 351fc312-18f5-4be4-95cd-286ad999e23a
+		summarizeBy: sum
+		sourceColumn: coherence_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column coherence_score_justification
+		dataType: string
+		lineageTag: 18a016ec-78c5-4dad-b54f-dac1b8cc35a2
+		summarizeBy: none
+		sourceColumn: coherence_score_justification
+
+		annotation SummarizationSetBy = Automatic
+
+	column instruction_following_score
+		dataType: double
+		lineageTag: ea6856b4-2a8b-4792-8564-a22961d2ed04
+		summarizeBy: sum
+		sourceColumn: instruction_following_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column instruction_following_score_justification
+		dataType: string
+		lineageTag: 8d77db99-be88-4789-9209-e6e20f0de40b
+		summarizeBy: none
+		sourceColumn: instruction_following_score_justification
+
+		annotation SummarizationSetBy = Automatic
+
+	column completeness_score
+		dataType: double
+		lineageTag: c6ad6b1d-bb55-4f7b-b7bc-7c5fa36a5bcf
+		summarizeBy: sum
+		sourceColumn: completeness_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column completeness_score_justification
+		dataType: string
+		lineageTag: 6cc28ca4-2efc-4f6c-803b-2394ef0c3ff7
+		summarizeBy: none
+		sourceColumn: completeness_score_justification
+
+		annotation SummarizationSetBy = Automatic
+
+	column relevance_score
+		dataType: double
+		lineageTag: f098e14b-e584-4f73-a434-9340d7cd4e47
+		summarizeBy: sum
+		sourceColumn: relevance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column relevance_score_justification
+		dataType: string
+		lineageTag: d4be60fa-9500-4783-92c3-b143b4094ba1
+		summarizeBy: none
+		sourceColumn: relevance_score_justification
+
+		annotation SummarizationSetBy = Automatic
+
+	column etl_session_log_id
+		dataType: string
+		lineageTag: 7171e71f-dd5b-43f6-88b4-f4e48983380f
+		summarizeBy: none
+		sourceColumn: etl_session_log_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column etl_create_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e8edbd3c-e81f-4876-ad86-758972bc2ea7
+		summarizeBy: none
+		sourceColumn: etl_create_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column etl_update_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bd105170-17d9-4227-8385-dff414efb94a
+		summarizeBy: none
+		sourceColumn: etl_update_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_actioned_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5398bce2-ebb9-442c-aeea-4b32ca52b500
+		summarizeBy: none
+		sourceColumn: last_actioned_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column owning_business_unit
+		dataType: string
+		lineageTag: 6adb9f87-6c21-4fd5-a04c-eee75fee314c
+		summarizeBy: none
+		sourceColumn: owning_business_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column owning_organisation_entity
+		dataType: string
+		lineageTag: 7f89a8e9-db2f-4769-a59e-988b44e37b21
+		summarizeBy: none
+		sourceColumn: owning_organisation_entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: acd532c6-0bf9-41c3-9a10-6bea148ec72b
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source System - Agent Type'
+		dataType: string
+		lineageTag: 9bea6ebd-307e-45dd-9ba6-c97fc2f0ea74
+		summarizeBy: none
+		sourceColumn: Source System - Agent Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_llm_model
+		dataType: string
+		lineageTag: 43ea6e53-3c94-40c8-9ada-ffc5e589ddac
+		summarizeBy: none
+		sourceColumn: agent_llm_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column local_area
+		dataType: string
+		lineageTag: e09289e1-8caf-4eec-a4c9-4199ad485908
+		summarizeBy: none
+		sourceColumn: local_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: c42c5da0-5f32-4bb8-a04c-4a8f5cec6f75
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column coherence_scorer_version
+		dataType: string
+		lineageTag: 6f432824-3fc7-4975-874b-5df5640bf637
+		summarizeBy: none
+		sourceColumn: coherence_scorer_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column instruction_following_scorer_version
+		dataType: string
+		lineageTag: 5cd364ff-b148-4813-83f0-3e8b4d29e508
+		summarizeBy: none
+		sourceColumn: instruction_following_scorer_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column completeness_scorer_version
+		dataType: string
+		lineageTag: f1247a55-e267-4937-b383-d788a828973f
+		summarizeBy: none
+		sourceColumn: completeness_scorer_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column relevance_scorer_version
+		dataType: string
+		lineageTag: 9a717f55-537e-4e8e-9535-c2185aef7efa
+		summarizeBy: none
+		sourceColumn: relevance_scorer_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column scorer_llm_model
+		dataType: string
+		lineageTag: d29e5f0e-3102-4eb0-b176-906a7ee88748
+		summarizeBy: none
+		sourceColumn: scorer_llm_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: int64
+		formatString: 0
+		lineageTag: cb35fa38-8c01-4b69-aac6-25bdb2b1a58a
+		summarizeBy: sum
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_start_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 044bd573-7f88-44b4-a1b8-5c2e59e0fd2a
+		summarizeBy: none
+		sourceColumn: effective_start_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_end_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ae958728-77ca-43e8-93da-e8c5b06c62a2
+		summarizeBy: none
+		sourceColumn: effective_end_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column groundedness_score
+		dataType: double
+		lineageTag: 201d108b-9d90-40ec-b172-8bc066339493
+		summarizeBy: sum
+		sourceColumn: groundedness_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column groundedness_score_justification
+		dataType: string
+		lineageTag: 5eec143b-0aad-4750-aa25-f6d0fca0517b
+		summarizeBy: none
+		sourceColumn: groundedness_score_justification
+
+		annotation SummarizationSetBy = Automatic
+
+	column groundedness_scorer_version
+		dataType: string
+		lineageTag: 7ed65c39-ef83-4d09-ae0b-c24df6dc84a3
+		summarizeBy: none
+		sourceColumn: groundedness_scorer_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition investigation_quality_agent_score = m
+		mode: import
+		queryGroup: 'AI Performance'
+		source =
+				let
+				    Source = Databricks.Catalogs(DBX_Server, DBX_http, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    gsc_devtest_unified_uc_Database = Source{[Name=DBX_Catalog,Kind="Database"]}[Data],
+				    u_conf_qlty_iro_Schema = gsc_devtest_unified_uc_Database{[Name="u_conf_qlty_iro",Kind="Schema"]}[Data],
+				    investigation_quality_agent_score_Table = u_conf_qlty_iro_Schema{[Name="investigation_quality_agent_score",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(investigation_quality_agent_score_Table,{{"last_actioned_date", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Source System - Agent Type", each [source_system] & " | " & [agent_type])
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

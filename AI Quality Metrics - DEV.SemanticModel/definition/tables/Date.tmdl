@@ -1,0 +1,169 @@
+table Date
+	lineageTag: 57716ca7-202a-47c4-96bc-256d780699c6
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b135488c-2371-43f7-8a6a-19337d3a7067
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 78d87947-440d-4b4b-9451-90af54dabf66
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 29985e14-fe2f-43fa-9401-9507808442b0
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 88f8dbbd-4ecd-4d5d-ac6a-da21d039a88d
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 961db0f6-4921-4d40-84cd-7d6fa5defcaa
+		summarizeBy: sum
+		sourceColumn: Week of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: a810cd93-fb66-4081-91f2-cd34e06d5c6e
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: 'Month Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Year'
+		dataType: string
+		lineageTag: c90d9363-2d5c-47cb-8c20-153f954b1195
+		summarizeBy: none
+		sourceColumn: Quarter Year
+		sortByColumn: 'Quarter Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Year'
+		dataType: string
+		lineageTag: 97b47a44-81b3-4e02-9abb-19b0cdb53a23
+		summarizeBy: none
+		sourceColumn: Week Year
+		sortByColumn: 'Week Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Sort' = 'Date'[Year] * 100 + 'Date'[Week of Year]
+		formatString: 0
+		lineageTag: 899c4ec5-0e59-4dfd-b4e7-171146ad7dd0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Sort' = 'Date'[Year] * 100 + 'Date'[Month]
+		formatString: 0
+		lineageTag: 3736699b-d5d2-4d62-a18d-f2409e325323
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Sort' = 'Date'[Year] * 10 + 'Date'[Quarter]
+		formatString: 0
+		lineageTag: 8ad771ab-fbba-49b0-8bb5-012b357533fb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_Number_ISO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7feaeb38-1058-4992-8d04-4c54f9d993d7
+		summarizeBy: sum
+		sourceColumn: Week_Number_ISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_&_Year_ISO
+		dataType: string
+		lineageTag: 369ce4e9-4cdd-4cad-b606-3a583c866f64
+		summarizeBy: none
+		sourceColumn: Week_&_Year_ISO
+		sortByColumn: Week_ISO_Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week_ISO_Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 120dc2d3-bd56-44c6-bd55-cea91bb7fde7
+		summarizeBy: none
+		sourceColumn: Week_ISO_Sort
+
+		annotation SummarizationSetBy = User
+
+	partition Date = m
+		mode: import
+		queryGroup: 'Date Table'
+		source = ```
+				let
+				  Source = List.Dates(Start_Date, Duration.Days(End_date - Start_Date) + 1, #duration(1, 0, 0, 0)), 
+				  #"Converted to Table" = Table.FromList(
+				    Source, 
+				    Splitter.SplitByNothing(), 
+				    null, 
+				    null, 
+				    ExtraValues.Error
+				  ), 
+				  #"Renamed Columns" = Table.RenameColumns(#"Converted to Table", {{"Column1", "Date"}}), 
+				  #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns", {{"Date", type date}}),
+				    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+				    #"Inserted Month" = Table.AddColumn(#"Inserted Year", "Month", each Date.Month([Date]), Int64.Type),
+				    #"Inserted Quarter" = Table.AddColumn(#"Inserted Month", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Quarter", "Week of Year", each Date.WeekOfYear([Date]), Int64.Type),
+				    #"Added Custom" = Table.AddColumn(#"Inserted Week of Year", "Month Name", each Date.ToText([Date], "MMM yy")),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Quarter Year", each "Q" & Text.From(Date.QuarterOfYear([Date])) & " " &Date.ToText([Date], "yy")),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Week Year", each "W" & Text.From(Date.WeekOfYear([Date])) & " "
+				& Text.From(Date.Year([Date]))),
+				  #"Added custom 1" = Table.AddColumn(#"Added Custom2", "Week_Number_ISO", each Date.WeekOfYear([Date], Day.Monday)),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Added custom 1", {{"Week_Number_ISO", Int64.Type}}),
+				  #"Added custom 2" = Table.AddColumn(#"Changed column type", "Week_&_Year_ISO", each "W" & Text.From(Date.WeekOfYear([Date], Day.Monday)) & " " & Text.From(Date.Year([Date]))),
+				  #"Added custom 3" = Table.AddColumn(#"Added custom 2", "Week_ISO_Sort", each [Year] * 100 + [Week_Number_ISO]),
+				  #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom 3", {{"Week_ISO_Sort", Int64.Type}})
+				in
+				    #"Changed column type 1"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,52 @@
+table adoption-rows-parameter
+	isHidden
+	lineageTag: 1658a89b-9fb6-4ab5-b12a-ded424f77f9f
+
+	column adoption-rows-parameter
+		isHidden
+		lineageTag: 01c0f1c6-2ad3-4c67-9433-05d5780eb96c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'adoption-rows-parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'adoption-rows-parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'adoption-rows-parameter Fields'
+		isHidden
+		lineageTag: 0f9031bb-6eb1-4aae-a9c7-ed835625311f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'adoption-rows-parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'adoption-rows-parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: ca45dd08-1189-42ed-b394-7498666a2c37
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition adoption-rows-parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Owning Business Unit", NAMEOF('vw_investigation_quality_adoption'[Owning_Business_Unit]), 0),
+				    ("Owning Organization Entity", NAMEOF('vw_investigation_quality_adoption'[Owning_Organization_Entity]), 1),
+				    ("Local Area", NAMEOF('vw_investigation_quality_adoption'[Local_Area]), 2),
+				    ("Department", NAMEOF('vw_investigation_quality_adoption'[department]), 3)
+				}
+
+	annotation PBI_Id = cde84b2e564049aabeabb20f8b64a352
+

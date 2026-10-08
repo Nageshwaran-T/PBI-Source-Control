@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "4c0c23106e2fb4f5ae22",
+  "position": {
+    "x": 800,
+    "y": 176,
+    "z": 0,
+    "height": 304,
+    "width": 304
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "uc_metric_investigation_quality_override"
+                    }
+                  },
+                  "Property": "agent_type"
+                }
+              },
+              "queryRef": "uc_metric_investigation_quality_override.agent_type",
+              "nativeQueryRef": "agent_type"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "uc_metric_investigation_quality_override"
+                  }
+                },
+                "Property": "agent_type"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

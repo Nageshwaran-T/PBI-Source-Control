@@ -1,0 +1,53 @@
+table rows-parameter-agent
+	isHidden
+	lineageTag: c129ac5e-0995-437a-b442-3f62b1ef97da
+
+	column rows-parameter-agent
+		isHidden
+		lineageTag: bcb3b7a8-15cc-43b3-9184-e9a07bbcb21a
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'rows-parameter-agent Order'
+
+		relatedColumnDetails
+			groupByColumn: 'rows-parameter-agent Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rows-parameter-agent Fields'
+		isHidden
+		lineageTag: b559037a-03ab-4c90-8786-6259777267e5
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'rows-parameter-agent Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'rows-parameter-agent Order'
+		isHidden
+		formatString: 0
+		lineageTag: 7d55b434-1af9-4351-b7c7-999b04426136
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rows-parameter-agent = calculated
+		mode: import
+		source =
+				{
+				     ("Owning Business Unit", NAMEOF('investigation_quality_agent_score'[owning_business_unit]), 0),
+				    ("Owning Organisation Entity", NAMEOF('investigation_quality_agent_score'[owning_organisation_entity]), 1),
+				    ("Local Area", NAMEOF('investigation_quality_agent_score'[local_area]), 2),
+				    ("Department", NAMEOF('investigation_quality_agent_score'[department]), 3),
+				    ("Source System - Agent Type", NAMEOF('investigation_quality_agent_score'[Source System - Agent Type]), 4)
+				}
+
+	annotation PBI_Id = 33c6fb0d08b54d9da32cb7e4aab0e5b7
+
