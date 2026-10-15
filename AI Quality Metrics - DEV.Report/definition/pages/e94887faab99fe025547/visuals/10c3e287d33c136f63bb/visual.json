@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "10c3e287d33c136f63bb",
+  "position": {
+    "x": 880,
+    "y": 112,
+    "z": 0,
+    "height": 288,
+    "width": 304
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "investigation_quality_agent_score"
+                    }
+                  },
+                  "Property": "coherence_score_justification"
+                }
+              },
+              "queryRef": "investigation_quality_agent_score.coherence_score_justification",
+              "nativeQueryRef": "coherence_score_justification"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "investigation_quality_agent_score"
+                  }
+                },
+                "Property": "coherence_score_justification"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
